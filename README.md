@@ -75,6 +75,7 @@ wrangler d1 execute forum-db --file=./schema.sql
 ```bash
 # .dev.vars 示例
 JWT_SECRET=your-very-long-random-secret-key-at-least-32-characters
+TURNSTILE_SITE_KEY=your-cloudflare-turnstile-site-key
 TURNSTILE_SECRET_KEY=your-cloudflare-turnstile-secret-key
 
 # S3 存储 (可选，用于图片上传)
@@ -112,8 +113,9 @@ npm run deploy
 ## 配置 Cloudflare Turnstile
 
 1. 访问 [Cloudflare Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile) 获取 Site Key 和 Secret Key
-2. 在管理后台设置中启用 Turnstile 并填入 Site Key
+2. 将 Site Key 设置为环境变量 `TURNSTILE_SITE_KEY`
 3. 将 Secret Key 设置为环境变量 `TURNSTILE_SECRET_KEY`
+4. 在管理后台设置中启用 Turnstile
 
 ## 目录结构
 

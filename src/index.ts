@@ -180,7 +180,7 @@ export default {
 				
 				return jsonResponse({
 					turnstile_enabled: setting ? setting.value === '1' : false,
-					turnstile_site_key: '0x4AAAAAACOKzENkFhyGzGm4',
+					turnstile_site_key: env.TURNSTILE_SITE_KEY || '',
 					user_count: userCount || 0
 				});
 			} catch (e) {
